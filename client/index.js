@@ -19,5 +19,6 @@ const fetchData = async()=>{
         console.log(error)
     }
 }
+
 button.addEventListener('click', fetchData );
 
