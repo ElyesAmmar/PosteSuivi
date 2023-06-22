@@ -36,7 +36,7 @@ App.get('/api/suivi/:num', async(req,res)=>{
   });
 
   // Send the JSON response
-  res.json(tableData);
+  res.status(200).json(tableData);
 
     } catch (error) {
         console.log(error)
