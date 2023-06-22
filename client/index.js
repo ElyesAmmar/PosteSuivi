@@ -1,7 +1,7 @@
 const component = document.getElementById('suivi');
 let input = document.getElementById('input');
 let button = document.getElementById('btn');
-let Num = 0;
+let Num;
 let table = document.createElement('table');
 
 const TableMap = (data) =>{
@@ -26,11 +26,13 @@ input.addEventListener("change",(e)=>{
 
 const fetchData = async()=>{
     try {
+        console.log('num',Num)
         let response = await axios.get(`http://localhost:7001/api/suivi/${Num}`)
         console.log(response)
         TableMap(response.data)
     } catch (error) {
         console.log(error)
+        alert(error.response.data)
     }
 }
 button.addEventListener('click', fetchData );
